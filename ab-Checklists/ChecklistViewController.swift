@@ -10,9 +10,11 @@ import UIKit
 
 class ChecklistViewController: UITableViewController {
 
+    //MARK: - PROPERTIES
     var items = [ChecklistItem]()
 
 
+    //MARK: - BEGIN THE CODE
     required init(coder aDecoder: NSCoder) {
 
         super.init(coder: aDecoder)
@@ -50,6 +52,23 @@ class ChecklistViewController: UITableViewController {
         tableView.rowHeight = 44
     }
 
+//    @IBAction func addItem() {
+//
+//        let newRowIndex = items.count
+//        let item = ChecklistItem()
+//
+//        item.text = "I am a new row"
+//        item.checked = false
+//
+//        items.append(item)
+//
+//        let indexPath = NSIndexPath(forRow: newRowIndex, inSection: 0)
+//        let indexPaths = [indexPath]
+//
+//        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+//
+//    }
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -75,6 +94,13 @@ class ChecklistViewController: UITableViewController {
         }
 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        items.removeAtIndex(indexPath.row)
+        let indexPaths = [indexPath]
+        tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+
     }
 
     func configureCheckmarkForCell(cell: UITableViewCell, item: ChecklistItem) {

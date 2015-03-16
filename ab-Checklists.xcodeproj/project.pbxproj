@@ -14,6 +14,7 @@
 		913838F01AB71C100052B0BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 913838EE1AB71C100052B0BD /* LaunchScreen.xib */; };
 		913838FC1AB71C100052B0BD /* ab_ChecklistsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913838FB1AB71C100052B0BD /* ab_ChecklistsTests.swift */; };
 		913839061AB755B60052B0BD /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913839051AB755B60052B0BD /* ChecklistItem.swift */; };
+		913839081AB78CD00052B0BD /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913839071AB78CD00052B0BD /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		913838FA1AB71C100052B0BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		913838FB1AB71C100052B0BD /* ab_ChecklistsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ab_ChecklistsTests.swift; sourceTree = "<group>"; };
 		913839051AB755B60052B0BD /* ChecklistItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		913839071AB78CD00052B0BD /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				913838E71AB71C100052B0BD /* ChecklistViewController.swift */,
 				913838E91AB71C100052B0BD /* Main.storyboard */,
 				913839051AB755B60052B0BD /* ChecklistItem.swift */,
+				913839071AB78CD00052B0BD /* AddItemViewController.swift */,
 				913838EC1AB71C100052B0BD /* Images.xcassets */,
 				913838EE1AB71C100052B0BD /* LaunchScreen.xib */,
 				913838E31AB71C100052B0BD /* Supporting Files */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				913838E81AB71C100052B0BD /* ChecklistViewController.swift in Sources */,
+				913839081AB78CD00052B0BD /* AddItemViewController.swift in Sources */,
 				913839061AB755B60052B0BD /* ChecklistItem.swift in Sources */,
 				913838E61AB71C100052B0BD /* AppDelegate.swift in Sources */,
 			);
