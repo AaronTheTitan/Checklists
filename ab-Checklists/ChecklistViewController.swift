@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChecklistViewController: UITableViewController {
+class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate {
 
     //MARK: - PROPERTIES
     var items = [ChecklistItem]()
@@ -68,6 +68,14 @@ class ChecklistViewController: UITableViewController {
 //        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
 //
 //    }
+
+    func addItemViewControllerDidCancel(controller: AddItemViewController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    func addItemViewController(controller: AddItemViewController, didFinishAddingItem item: ChecklistItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
