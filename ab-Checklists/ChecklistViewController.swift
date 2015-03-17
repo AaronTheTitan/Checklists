@@ -52,28 +52,19 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
         tableView.rowHeight = 44
     }
 
-//    @IBAction func addItem() {
-//
-//        let newRowIndex = items.count
-//        let item = ChecklistItem()
-//
-//        item.text = "I am a new row"
-//        item.checked = false
-//
-//        items.append(item)
-//
-//        let indexPath = NSIndexPath(forRow: newRowIndex, inSection: 0)
-//        let indexPaths = [indexPath]
-//
-//        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
-//
-//    }
-
     func addItemViewControllerDidCancel(controller: AddItemViewController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
     func addItemViewController(controller: AddItemViewController, didFinishAddingItem item: ChecklistItem) {
+
+        let newRowIndex = items.count
+        items.append(item)
+
+        let indexPath = NSIndexPath(forRow: newRowIndex, inSection: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+
         dismissViewControllerAnimated(true, completion: nil)
     }
 
@@ -125,7 +116,13 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
         label.text = item.text
     }
 
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AddItem" {
+            let navigationController = segue.destinationViewController as UINavigationController
+            let controller = navigationController.topViewController as AddItemViewController
+            controller.delegate = self
+        }
+    }
 
 
 
