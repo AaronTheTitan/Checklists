@@ -12,7 +12,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
 
     //MARK: - PROPERTIES
     var items = [ChecklistItem]()
-
+    var checklist: Checklist!
 
     //MARK: - BEGIN THE CODE
     required init(coder aDecoder: NSCoder) {
@@ -21,41 +21,12 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
 
         super.init(coder: aDecoder)
         loadChecklistItems()
-
-//        println("Documents folder is \(documentsDirectory())")
-//        println("Data file path is \(dataFilePath())")
-
-//        let row0item = ChecklistItem()
-//        row0item.text = "Walk the dumb dog"
-//        row0item.checked = false
-//        items.append(row0item)
-//
-//        let row1item = ChecklistItem()
-//        row1item.text = "Brush ma teeth"
-//        row1item.checked = false
-//        items.append(row1item)
-//
-//        let row2item = ChecklistItem()
-//        row2item.text = "Learn iOS development"
-//        row2item.checked = false
-//        items.append(row2item)
-//
-//        let row3item = ChecklistItem()
-//        row3item.text = "Soccer Practice"
-//        row3item.checked = false
-//        items.append(row3item)
-//
-//        let row4item = ChecklistItem()
-//        row4item.text = "Eat ice cream"
-//        row4item.checked = false
-//        items.append(row4item)
-
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.rowHeight = 44
+        title = checklist.name
     }
 
     // MARK: - DELEGATE METHODS
@@ -72,7 +43,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         let indexPaths = [indexPath]
         tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
 
-        saveCheclistItems()
+        saveChecklistItems()
 
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -87,7 +58,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
             }
         }
 
-        saveCheclistItems()
+        saveChecklistItems()
 
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -115,7 +86,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         }
     }
 
-    func saveCheclistItems() {
+    func saveChecklistItems() {
         let data = NSMutableData()
         let archiver = NSKeyedArchiver(forWritingWithMutableData: data)
         archiver.encodeObject(items, forKey: "ChecklistItems")
@@ -151,7 +122,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-        saveCheclistItems()
+        saveChecklistItems()
     }
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -159,7 +130,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         let indexPaths = [indexPath]
         tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
 
-        saveCheclistItems()
+        saveChecklistItems()
 
     }
 
