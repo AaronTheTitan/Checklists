@@ -19,6 +19,7 @@
 		9138390D1AB7E4440052B0BD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9138390B1AB7E4440052B0BD /* Fabric.framework */; };
 		9192BD161ABC7F120070179D /* AllListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9192BD151ABC7F120070179D /* AllListsViewController.swift */; };
 		9192BD181ABC818F0070179D /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9192BD171ABC818F0070179D /* Checklist.swift */; };
+		91B0A58C1ABDBBC50010F6C6 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0A58B1ABDBBC50010F6C6 /* ListDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		9138390B1AB7E4440052B0BD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		9192BD151ABC7F120070179D /* AllListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListsViewController.swift; sourceTree = "<group>"; };
 		9192BD171ABC818F0070179D /* Checklist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
+		91B0A58B1ABDBBC50010F6C6 /* ListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,16 +95,10 @@
 		913838E21AB71C100052B0BD /* ab-Checklists */ = {
 			isa = PBXGroup;
 			children = (
-				913838E51AB71C100052B0BD /* AppDelegate.swift */,
-				913838E71AB71C100052B0BD /* ChecklistViewController.swift */,
-				913838E91AB71C100052B0BD /* Main.storyboard */,
-				913839051AB755B60052B0BD /* ChecklistItem.swift */,
-				913839071AB78CD00052B0BD /* ItemDetailViewController.swift */,
-				913838EC1AB71C100052B0BD /* Images.xcassets */,
-				913838EE1AB71C100052B0BD /* LaunchScreen.xib */,
+				91B0A5881ABDBB6C0010F6C6 /* Default */,
+				91B0A5891ABDBB880010F6C6 /* Model */,
+				91B0A58A1ABDBB920010F6C6 /* View */,
 				913838E31AB71C100052B0BD /* Supporting Files */,
-				9192BD151ABC7F120070179D /* AllListsViewController.swift */,
-				9192BD171ABC818F0070179D /* Checklist.swift */,
 			);
 			path = "ab-Checklists";
 			sourceTree = "<group>";
@@ -130,6 +126,37 @@
 				913838FA1AB71C100052B0BD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		91B0A5881ABDBB6C0010F6C6 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				913838E91AB71C100052B0BD /* Main.storyboard */,
+				913838E51AB71C100052B0BD /* AppDelegate.swift */,
+				913838EC1AB71C100052B0BD /* Images.xcassets */,
+				913838EE1AB71C100052B0BD /* LaunchScreen.xib */,
+			);
+			name = Default;
+			sourceTree = "<group>";
+		};
+		91B0A5891ABDBB880010F6C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				913839051AB755B60052B0BD /* ChecklistItem.swift */,
+				9192BD171ABC818F0070179D /* Checklist.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		91B0A58A1ABDBB920010F6C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9192BD151ABC7F120070179D /* AllListsViewController.swift */,
+				913838E71AB71C100052B0BD /* ChecklistViewController.swift */,
+				91B0A58B1ABDBBC50010F6C6 /* ListDetailViewController.swift */,
+				913839071AB78CD00052B0BD /* ItemDetailViewController.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				913838E81AB71C100052B0BD /* ChecklistViewController.swift in Sources */,
+				91B0A58C1ABDBBC50010F6C6 /* ListDetailViewController.swift in Sources */,
 				913839081AB78CD00052B0BD /* ItemDetailViewController.swift in Sources */,
 				913839061AB755B60052B0BD /* ChecklistItem.swift in Sources */,
 				913838E61AB71C100052B0BD /* AppDelegate.swift in Sources */,
