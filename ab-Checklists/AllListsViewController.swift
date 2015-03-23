@@ -14,12 +14,6 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -41,12 +35,10 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-
     }
 
 
-    // MARK: - TextField delegate methods ------------------------------->
+    // MARK: - TextField delegate methods -------------------------------/
 
     func listDetailViewControllerDidCancel(controller: ListDetailViewController) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -54,12 +46,6 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
 
 
     func listDetailViewController(controller: ListDetailViewController, didFinishAddingChecklist checklist: Checklist) {
-//        let newRowIndex = dataModel.lists.count
-//        dataModel.lists.append(checklist)
-//
-//        let indexPath = NSIndexPath(forRow: newRowIndex, inSection:0)
-//        let indexPaths = [indexPath]
-//        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
 
         dataModel.lists.append(checklist)
         dataModel.sortChecklists()
@@ -69,20 +55,13 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
 
     func listDetailViewController(controller: ListDetailViewController, didFinishEditingChecklist checklist: Checklist) {
 
-//        if let index = find(dataModel.lists, checklist) {
-//            let indexPath = NSIndexPath(forRow: index, inSection: 0)
-//            if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-//                cell.textLabel!.text = checklist.name
-//            }
-//        }
-
         dataModel.sortChecklists()
         tableView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
 
     }
 
-    // MARK: - Table view data source ------------------------------->
+    // MARK: - Table view data source -------------------------------/
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         dataModel.lists.removeAtIndex(indexPath.row)
@@ -140,7 +119,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     }
 
 
-    // MARK: - Segue ------------------------------->
+    // MARK: - Segue -------------------------------/
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowChecklist" {
@@ -161,25 +140,5 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
             dataModel.indexOfSelectedChecklist = -1
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

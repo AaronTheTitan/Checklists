@@ -110,8 +110,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
 
     func configureTextForCell(cell: UITableViewCell, withChecklistItem item: ChecklistItem) {
         let label = cell.viewWithTag(1000) as UILabel
-//        label.text = item.text
-        label.text = "\(item.text)"
+        label.text = item.text
 
         let dueByLabel = cell.viewWithTag(1002) as UILabel
         dueByLabel.text = "Due by: \(item.dateAsString())"
