@@ -87,4 +87,18 @@ class ChecklistItem : NSObject, NSCoding {
             println("Scheduled notification \(localNotification) for itemID \(itemID)")
         }
     }
+
+    func dateAsString() -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+
+        return dateFormatter.stringFromDate(dueDate)
+    }
+
+
+
+
+
+
+
 }

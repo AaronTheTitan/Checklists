@@ -26,16 +26,25 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="087-ZY-eYd">
-                                            <rect key="frame" x="40" y="11" width="493" height="21"/>
+                                            <rect key="frame" x="40" y="5" width="493" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due By: Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCp-H4-utH">
+                                            <rect key="frame" x="40" y="24" width="493" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="centerY" secondItem="087-ZY-eYd" secondAttribute="centerY" id="7Qq-PD-dCS"/>
+                                        <constraint firstAttribute="centerY" secondItem="087-ZY-eYd" secondAttribute="centerY" constant="6" id="7Qq-PD-dCS"/>
                                         <constraint firstItem="087-ZY-eYd" firstAttribute="leading" secondItem="WBz-FV-w9O" secondAttribute="leading" constant="40" id="7WY-Zg-ac3"/>
                                         <constraint firstAttribute="trailing" secondItem="087-ZY-eYd" secondAttribute="trailing" id="d7r-ma-Oze"/>
+                                        <constraint firstAttribute="trailing" secondItem="YCp-H4-utH" secondAttribute="trailing" id="ffv-yT-ada"/>
+                                        <constraint firstAttribute="bottom" secondItem="YCp-H4-utH" secondAttribute="bottom" constant="4" id="kvC-7S-F9K"/>
+                                        <constraint firstItem="YCp-H4-utH" firstAttribute="leading" secondItem="WBz-FV-w9O" secondAttribute="leading" constant="40" id="xJr-AQ-feO"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
