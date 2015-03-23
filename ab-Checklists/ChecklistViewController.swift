@@ -19,6 +19,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         super.viewDidLoad()
         tableView.rowHeight = 44
         title = checklist.name
+        sortItemsByDate()
     }
 
     // MARK: - DELEGATE METHODS
@@ -35,6 +36,8 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         let indexPaths = [indexPath]
         tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
 
+        sortItemsByDate()
+        tableView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
     }
 
@@ -48,10 +51,14 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
             }
         }
 
+        sortItemsByDate()
+        tableView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
     }
 
-
+    func sortItemsByDate() {
+        checklist.items.sort({ date1, date2 in return date1.dueDate.compare(date2.dueDate) == NSComparisonResult.OrderedAscending })
+    }
 
     // MARK: - TABLEVIEW METHODS
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
