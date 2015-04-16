@@ -21,7 +21,7 @@ class DataModel {
     // MARK: - Save/Load and what not ------------------------------->
 
     func documentsDirectory() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as [String]
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as! [String]
         return paths[0]
     }
 
@@ -42,7 +42,7 @@ class DataModel {
         if NSFileManager.defaultManager().fileExistsAtPath(path) {
             if let data = NSData(contentsOfFile: path) {
                 let unarchiver = NSKeyedUnarchiver(forReadingWithData: data)
-                lists = unarchiver.decodeObjectForKey("Checklists") as [Checklist]
+                lists = unarchiver.decodeObjectForKey("Checklists") as! [Checklist]
                 unarchiver.finishDecoding()
 
                 sortChecklists()

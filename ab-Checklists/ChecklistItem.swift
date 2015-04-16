@@ -29,9 +29,9 @@ class ChecklistItem : NSObject, NSCoding {
         itemID = DataModel.nextChecklistItemID()
         super.init()
 
-        text = aDecoder.decodeObjectForKey("Text") as String
+        text = aDecoder.decodeObjectForKey("Text") as! String
         checked = aDecoder.decodeBoolForKey("Checked")
-        dueDate = aDecoder.decodeObjectForKey("DueDate") as NSDate
+        dueDate = aDecoder.decodeObjectForKey("DueDate") as! NSDate
         shouldRemind = aDecoder.decodeBoolForKey("ShouldRemind")
         itemID = aDecoder.decodeIntegerForKey("ItemID")
     }
@@ -53,7 +53,7 @@ class ChecklistItem : NSObject, NSCoding {
     }
 
     func notificationForThisItem() -> UILocalNotification? {
-        let allNotifications = UIApplication.sharedApplication().scheduledLocalNotifications as [UILocalNotification]
+        let allNotifications = UIApplication.sharedApplication().scheduledLocalNotifications as! [UILocalNotification]
 
         for notification in allNotifications {
             if let number = notification.userInfo?["ItemID"] as? NSNumber {

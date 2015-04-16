@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Aaron Bradley. All rights reserved.
 //
 
-import UIkit
+import UIKit
 
 protocol ListDetailViewControllerDelegate: class {
 
@@ -94,7 +94,7 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate, Icon
     // MARK: - Segue Method
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "PickIcon" {
-            let controller = segue.destinationViewController as IconPickerViewController
+            let controller = segue.destinationViewController as! IconPickerViewController
             controller.delegate = self
         }
     }
